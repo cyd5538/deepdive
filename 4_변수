@@ -1,0 +1,101 @@
+// 즐거운 자바스크립트 공부 시작
+
+//  예제 04-02
+
+// 변수는 하나의 값을 저장하기 위한 수단이다.
+var userid = 1;
+var userName = 'Lee';
+
+// 객체나 배열 같은 자료구조를 사용하면 여러 개의 값을 하나로 그룹화해서 하나의 값처럼 사용할 수 있다.
+var user = { id : 1, name: 'Lee'};
+var users = [
+    { id:1, name: 'Lee'},
+    { id:2, name: 'Kim'}
+];
+
+// 예제 04-03
+var result = 10 + 20;
+
+// 예제 04-04
+var score = x; //변수 선언
+
+// 예제 04-05 변수 선언의 실행 시점과 변수 호이스팅
+console.log(score);
+var score;
+
+// 예제 04-06
+var score;
+score = 80;
+
+// 예제 04-07
+var score = 80;
+
+// 예제 04-08
+console.log(score);
+
+var score;
+score = 80;
+
+console.log(score);
+
+// 예제 04-09
+console.log(score);
+
+var scroe = 80;
+
+console.log(score);
+
+// 예제 04-10
+
+console.log(score);
+
+score = 80 ;
+var score ;
+
+// 예제 04-11
+var score = 80;
+score = 90;
+
+//  const 재할당 금지
+
+// 예제 04-12
+var person, $elem, _name, first_name, vall;
+
+// 예제 04-13
+var 이름, 일본어;
+// 한글과 일본어 등은 사용 가능하나 권장xX
+
+// 예제 04-14 사용불가
+var first-name;
+var 1st;
+var this;
+
+// 예제 04-15 대소문자를 구별하므로 다음 변수는 각각 별개의 변수이다
+var firstname;
+var firstName;
+var FIRSTNAME;
+
+// 예제 04-16 변수 이름을 좋게 설정해서 가독성을 높인다!
+var x = 3;
+var score = 100;
+
+// 예제 04-17 변수 선언에 주석이 필요하다면 변수의 존재 목적을 명확히 드러내지 못하는 것이다.
+
+var d; // 경과 시간, 단위는 날짜이다.
+
+var elspsedTimeIndays; //ok
+
+// 예제 04-18 ㅔ이밍 컨벤션
+var firstname; //카멜케이스
+
+var first_name; //스네이크 케이스
+
+var firstName; //파스칼 케이스
+
+//헝가리언 케이스
+var strFirstName;
+var $elem = document.getElementById('myid');
+var observable$ = fromEvent(document, 'click');
+
+// 변수를 공부했는데. 그냥 책을 읽는 것보다 예제를 쳐보면서 하니깐 시간이 더 오래걸려도 기억에 더 잘 남는 것 같다
+// 변수는 이름을 잘 짓는것이 중요한 것 같다!
