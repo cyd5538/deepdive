@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 가격 프로개름</title>
+    <style>
+        #content{
+            width: 450px;
+            margin: 0 auto;
+        }
+
+        #content img {
+            float: left;
+            margin-right: 25px;
+        }
+
+        ul {
+            list-style: none;
+            padding-top: 40px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        li label {
+            width: 100px;
+            text-align: right;
+        }
+
+        input[type="text"] {
+            width: 110px;
+            padding: 5px 10px;
+            margin: 0 5px 0 10px;
+        } 
+    </style>
+</head>
+<body>
+    <div id="content">
+        <img src="resource/discount-gea0aa63fc_640.jpg" width="150">
+        <ul>
+            <li>
+                <label for="originalPrice">원래 가격</label>
+                <input type="text" id="originalPrice">원
+            </li>
+            <li>
+                <label for="rate">할인율</label>
+                <input type="text" id="rate">%
+            </li>
+            <li>
+                <button onclick="showPrice()">할인 가격 계산하기</button>
+            </li>
+        </ul>
+        <div id="showResult"></div>
+    </div>
+    <script>
+        function showPrice() {
+            // 사용자가 입력한 값을 두 개의 변수에 저장함.
+            var oPrice = document.querySelector('#originalPrice').value;
+            var rate = document.querySelector('#rate').value;
+
+            //두 개의 값이 음수가 아니라면 실행해라
+            if(oPrice > 0 && rate > 0) {
+                var savedPrice = oPrice * (rate/100);
+                var resultPrice = oPrice - savedPrice;
+            }
+
+            document.querySelector('#showResult').innerHTML = "상품의 원래 가격은" + oPrice + '원이고, 할인율은' + rate + "%입니다." 
+            + savedPrice + "원을" + "절약한" + resultPrice + "원에 살 수 있습니다.";
+        }
+    </script>
+</body>
+</html>

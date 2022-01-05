@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자색 바꾸기</title>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        #heading{
+            color: blue;
+        }
+
+        #text{
+            color: gray;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="heading">안녕 자바스크립트</h1>
+    <p id="text">위에 텍스트를 클릭해보세요.</p>
+    <script>
+        // heading 변수를 선언하고 h1 태그를 저장
+        var heading = document.querySelector('#heading');
+        // h1태그를 클릭을 하면 글자색깔을 red로 설정하시오.
+        heading.onclick = function() {
+            heading.style.color = "red";
+        }
+
+    </script>
+</body>
+</html>
