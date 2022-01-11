@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수-1</title>
+</head>
+<body>
+    <script>
+        
+        // 코드의 재활용
+        function callName(name, count){
+            for(var i=1; i<=count; i++){
+                document.write(i + "." + name + '<br/>');
+            }
+        }
+
+        //매개변수를 주면 결과가 달라진다.
+        callName('최영진', 10);
+        callName('부대찌개', 1);
+        callName('닭볽음탕', 5);
+    </script>
+</body>
+</html>
