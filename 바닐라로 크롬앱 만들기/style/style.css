@@ -1,0 +1,68 @@
+
+
+.hidden{
+    display: none;    
+}
+
+image{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#clock{
+    position: absolute;
+    right: 2%;
+    top: 0;
+}
+
+#login-form{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#login-form>input:first-child{
+    height: 50px;
+    border: none;
+}
+
+#login-form>input:last-child{
+    height: 50px;
+    width: 80px;
+    background-color: rgb(211, 2, 211);
+    border: none;
+}
+
+#todo-form{
+    position: fixed;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+}
+
+#todo-form input{
+    width: 200px;
+    height: 50px;
+    background-color:transparent;
+    border:none;
+    color: black;
+}
+
+#todo-form input:hover{
+   
+    border:1px solid #000;
+    background-color: #fff;
+    transition: ease-in 0.3s;
+}
