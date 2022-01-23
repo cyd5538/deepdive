@@ -1,4 +1,8 @@
-
+input::placeholder{
+    text-align: center;
+    color: black;
+    font-size: 1.2em;
+}
 
 .hidden{
     display: none;    
@@ -21,21 +25,31 @@ image{
 }
 
 #clock{
-    position: absolute;
+    position: fixed;
     right: 2%;
     top: 0;
+    color: white;
 }
-
+#weather{
+    position: fixed;
+    right: 12%;
+    top: 1%;
+    color: white;
+}
 #login-form{
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+
 }
 
 #login-form>input:first-child{
     height: 50px;
-    border: none;
+    border: 2px solid white;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: transparent;
 }
 
 #login-form>input:last-child{
@@ -43,26 +57,66 @@ image{
     width: 80px;
     background-color: rgb(211, 2, 211);
     border: none;
+    cursor: pointer;
 }
 
 #todo-form{
     position: fixed;
     left: 50%;
-    top: 60%;
-    transform: translate(-50%,-50%);
+    top: 70%;
+    transform: translate(-50%,-60%);
+    
 }
 
 #todo-form input{
-    width: 200px;
+    width: 250px;
     height: 50px;
     background-color:transparent;
     border:none;
     color: black;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
+#todo-list{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+
+#todo-list li{
+    padding-bottom: 20px;
+    font-size: 1.5em;
+    color: white;
+}
+
+#todo-form li{
+    position: fixed;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%,-70%);
+}
 #todo-form input:hover{
    
     border:1px solid #000;
-    background-color: #fff;
+
     transition: ease-in 0.3s;
+}
+
+#quote{
+    position: fixed;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%,-90%);
+    color: black;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#greeting{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
 }
