@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기</title>
+</head>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      background-color: rgb(139, 139, 194);
+      font-size : 1.2em;
+    }
+
+    div,
+    button{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    #input{
+      height:30px;
+      text-align: center;
+    }
+
+    button{
+      height: 30px;
+      width: 50px;
+      background-color: white;
+  
+    }
+
+    div:first-child{
+      margin-top: 100px;
+    }
+
+    
+  </style>
+<body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어: <span id="word"></span></div>
+    <div><input type="text" id="input"></div>
+    <div><button>입력</button></div>
+    <script>
+
+      //몇 명이 참가할지 선택한다
+      //parseInt는 정확한 파싱이 필요할때, Number는 빠른 처리 속도를 원할때 사용하시면 됩니다.
+      const number = Number(prompt('몇 명이 참가하나요?'));
+      const $input = document.querySelector('input');
+      const $button = document.querySelector('button');
+      const $word = document.querySelector('#word');
+      const $order = document.querySelector('#order');
+      let word; // 제시어
+      let newWord; // 현재 단어
+
+       const onClickButton = () => {
+        if (!word) { // 제시어가 비어 있는가?
+          word = newWord; // 입력한 단어가 제시어가 된다.
+          $word.textContent = word; // 화면에 제시어 표시
+          const order = Number($order.textContent);
+          if (order + 1 > number) {
+            $order.textContent = 1;
+          } else {
+            $order.textContent = order + 1;
+          }
+        } else { // 비어 있지 않다.
+          if (word[word.length - 1] === newWord[0]) { // 입력한 단어가 올바른가?
+            // 올바르다.
+            word = newWord; // 현재 단어를 제시어에 저장한다.
+            $word.textContent = word; // 화면에 제시어 표시
+            const order = Number($order.textContent);
+            if (order + 1 > number) {
+              $order.textContent = 1;
+              $input.value = '';
+            } else {
+              $order.textContent = order + 1;
+              $input.value = '';
+              $input.focus();   // 입력 태그를 선택하게 하려면 focus라는 메서드를 사용합니다. focus는 입력 태그 내부에 커서를 위치하게 해서 다음 사용자가 입력하기 편하게 도와줍니다.
+            }
+          } else {// 올바르지 않다.
+            alert('올바르지 않은 단어입니다!');
+            $input.value = '';
+            $input.focus();
+          }
+        }
+      };
+      const onInput = (event) => {
+      newWord = event.target.value; // 입력하는 단어를 현재 단어로
+      };
+
+      $button.addEventListener('click', onClickButton);
+      $input.addEventListener('input', onInput);
+    </script>
+</body>
+</html>
