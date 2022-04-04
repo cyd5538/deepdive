@@ -7,4 +7,4 @@
 지우개
 전체 지우기
 ![image](https://user-images.githubusercontent.com/91642972/161497799-221da5c3-fb28-4945-bd03-d41437fbe3aa.png)
-어 캔버스를 처음 접해봤는데 정말 재밌는 기능인 것 같다.
+
