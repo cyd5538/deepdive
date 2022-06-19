@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    </ul>
+
+
+    <script>
+        const animals = [
+            { name: 'lion', size: 'big', isAggressive: true, weight: 200 },
+            { name: 'monkey', size: 'medium', isAggressive: true, weight: 30 },
+            { name: 'cat', size: 'small', isAggressive: false, weight: 10 },
+            { name: 'rat', size: 'small', isAggressive: false, weight: 2 }
+        ]
+
+        animals.forEach((animal) => {
+            console.log(animal.size)
+        })
+
+        const animalsNames = animals.map((animal) => {
+            return `Animal's name is ${animal.name} and size  is ${animal.size}`;
+        })
+
+        console.log(animalsNames)
+
+        const smallAnimals = animals.filter((animal) => {
+            return animal.size === 'small';
+        })
+
+        console.log(smallAnimals)
+
+        const numbers = [1, 10, 11, 23, 444];
+
+        const total = numbers.reduce((arr, cur) => {
+            return arr + cur
+        })
+
+        console.log(total)
+
+        const totalWidth = animals.reduce((arr, cur) => {
+            return arr + cur.weight
+        }, 0)
+
+        console.log(totalWidth)
+
+        class fruits {
+            constructor(name, price) {
+                this.name = name,
+                    this.price = price
+            }
+        }
+
+        const fruit1 = new fruits("포도", 300)
+        const fruit2 = new fruits("바나나", 400)
+        const fruit3 = new fruits("딸기", 700)
+        const fruit4 = new fruits("멜론", 1300)
+
+        const fruit = [fruit1, fruit2, fruit3, fruit4]
+        console.log(fruit)
+
+        const fruitMap = fruit.map((index) => {
+            return index.name
+        })
+
+        console.log(fruitMap)
+
+        const fruitPlus = fruit.reduce((arr, cur) => {
+            return arr + cur.price
+        }, 0)
+        console.log(fruitPlus)
+
+        let myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+        
+        let myOrderedArray = myArray.reduce(function (accumulator, currentValue) {
+            if (accumulator.indexOf(currentValue) === -1) {
+                accumulator.push(currentValue)
+            }
+            return accumulator
+        }, [])
+
+        console.log(myOrderedArray)
+
+        const number = [1,2,3,4,5,6,7,8,9]
+        const numberss = number.map((index) => {
+            if(index % 2){
+                return '홀수';
+            }
+            return '짝수'
+        })
+
+        console.log(numberss);
+        
+
+
+    </script>
+</body>
+
+</html>

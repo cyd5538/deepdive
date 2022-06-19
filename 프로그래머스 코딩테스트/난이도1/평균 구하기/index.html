@@ -19,6 +19,16 @@
     
 
     <script>
+        const average = (arr) => {
+            const plus = arr.reduce((arr,cur) => {
+                console.log(arr,cur)
+                return arr+ cur
+            })
+   
+            return plus / arr.length
+        }
+        const arr = [1,2,3,4,5,6,7,8,9,10]
+        console.log(average(arr))
 
     </script>
 </body>
