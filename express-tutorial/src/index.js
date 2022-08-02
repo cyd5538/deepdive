@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const groceriesRoute = require('./routes/groceries');
@@ -10,6 +11,11 @@ const authRoute = require('./routes/auth');
 const app = express();
 const PORT = 3001;
 
+mongoose
+  .connect('mongodb://localhost:27017/expressjs_tutorial')
+  .then(() => console.log('Connect to db'))
+  .catch((err) => console.log(err));
+  
 app.use(express.json());
 app.use(express.urlencoded());
 
