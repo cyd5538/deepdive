@@ -14,7 +14,7 @@ document.body.appendChild(canvas)
 let backgroundImage,spaceShipimage,bulletImage,enemyImage,gameOverImage;
 
 // 우주선 좌표
-let spaceShipX = canvas.width/2-25
+let spaceShipX = canvas.width/2-30
 let spaceShipY = canvas.height-50
 
 function loadImage () { 
@@ -33,6 +33,32 @@ function loadImage () {
     gameOverImage.src ="images/gameover.png"
 }
 
+let keysDown = {}
+function steupkeyboardListner () {
+  document.addEventListener("keydown", function(event){
+      keysDown[event.key] = true
+      console.log(keysDown)
+  })
+  document.addEventListener("keyup", function(event){
+    delete keysDown[event.key]
+  })
+} 
+
+function update(){
+  if("ArrowRight" in keysDown){
+    spaceShipX += 3 ;
+  } // right
+  if("ArrowLeft" in keysDown){
+    spaceShipX -= 3 ;
+  } // left
+  if(spaceShipX <=0) {
+    spaceShipX=0
+  }
+  if(spaceShipX >= canvas.width - 50){
+    spaceShipX = canvas.width - 50
+  }
+}
+
 // 이미지 보여주는 함수
 function render() {
     ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height)
@@ -41,9 +67,15 @@ function render() {
 }
 
 function main () {
+  update();
   render();
+  console.log(spaceShipX)
   // 프레임을 계속 여러번 호출한다
   requestAnimationFrame(main)  
 }
+
+
+
 loadImage();
+steupkeyboardListner();
 main()
