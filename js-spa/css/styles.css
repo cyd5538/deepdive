@@ -1,0 +1,33 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color : black;
+}
+
+a:hover {
+  color:blueviolet
+}
+
+li {
+  list-style: none;
+}
+
+#page {
+  height: 90vh;
+}
+
+.header,
+footer{
+  width: 100%;
+  padding-left: 20px;
+  height: 50px;
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+  gap: 20px
+}
